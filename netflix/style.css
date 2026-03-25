@@ -1,0 +1,77 @@
+/* Estilos inspirados na Netflix */
+
+body {
+    background-color: #000; /* fundo preto parecido com Netflix */
+    color: #fff; /* texto branco para alto contraste */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* fonte limpa e moderna */
+    margin: 0; /* remove margem padrão do navegador */
+    padding: 0; /* remove espaçamento interno padrão */
+    display: flex; /* usa flexbox para centralizar conteúdo */
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: center; /* centraliza verticalmente */
+    min-height: 100vh; /* ocupa altura total da tela */
+}
+
+main {
+    text-align: center; /* centraliza texto */
+    max-width: 1200px; /* largura máxima do container */
+    width: 100%; /* ocupa 100% da largura disponível */
+}
+
+h1 {
+    font-size: 3rem; /* tamanho grande para título */
+    margin-bottom: 3rem; /* espaço abaixo do título */
+    font-weight: 300; /* peso de fonte leve */
+}
+
+.profiles {
+    display: flex; /* layout flexível para perfis */
+    justify-content: center; /* centraliza perfil horizontalmente */
+    gap: 2rem; /* espaço entre perfis */
+    flex-wrap: wrap; /* quebra linhas em telas menores */
+}
+
+.profile {
+    display: flex; /* usa flexbox no perfil */
+    flex-direction: column; /* conteúdo vertical */
+    align-items: center; /* alinha itens ao centro */
+    cursor: pointer; /* indica elemento clicável */
+    transition: transform 0.3s ease; /* animação suave no hover */
+}
+
+.profile:hover {
+    transform: scale(1.1); /* aumenta o perfil ao passar o mouse */
+}
+
+.profile img {
+    width: 150px; /* largura da imagem do perfil */
+    height: 150px; /* altura da imagem do perfil */
+    border-radius: 50%; /* deixa a imagem circular */
+    object-fit: cover; /* mantém proporção da imagem */
+    border: 3px solid transparent; /* borda inicial transparente */
+    transition: border-color 0.3s ease; /* animação da borda */
+}
+
+.profile:hover img {
+    border-color: #fff; /* borda branca no hover */
+}
+
+.profile p {
+    margin-top: 1rem; /* espaço acima do nome */
+    font-size: 1.2rem; /* tamanho do texto do nome */
+    font-weight: 400; /* peso normal */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* título menor em telas pequenas */
+    }
+    .profile img {
+        width: 120px; /* imagem menor em telas pequenas */
+        height: 120px; /* imagem menor em telas pequenas */
+    }
+    .profiles {
+        gap: 1rem; /* menos espaço entre perfis em telas pequenas */
+    }
+}
