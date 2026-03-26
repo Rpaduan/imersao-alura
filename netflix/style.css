@@ -1,8 +1,20 @@
 /* Estilos inspirados na Netflix */
 
+:root {
+    --bg-color: #000; /* cor de fundo padrão dark */
+    --text-color: #fff; /* cor do texto padrão dark */
+    --card-bg: rgba(255, 255, 255, 0.06); /* fundo leve do card */
+}
+
+body.light-mode {
+    --bg-color: #fff; /* cor de fundo no light mode */
+    --text-color: #111; /* texto escuro no light mode */
+    --card-bg: rgba(0, 0, 0, 0.04); /* fundo leve do card light */
+}
+
 body {
-    background-color: #000; /* fundo preto parecido com Netflix */
-    color: #fff; /* texto branco para alto contraste */
+    background-color: var(--bg-color); /* usa variável de tema */
+    color: var(--text-color); /* usa variável de tema */
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* fonte limpa e moderna */
     margin: 0; /* remove margem padrão do navegador */
     padding: 0; /* remove espaçamento interno padrão */
@@ -10,6 +22,7 @@ body {
     justify-content: center; /* centraliza horizontalmente */
     align-items: center; /* centraliza verticalmente */
     min-height: 100vh; /* ocupa altura total da tela */
+    position: relative; /* contexto de posicionamento para o botão */
 }
 
 main {
@@ -37,6 +50,9 @@ h1 {
     align-items: center; /* alinha itens ao centro */
     cursor: pointer; /* indica elemento clicável */
     transition: transform 0.3s ease; /* animação suave no hover */
+    background-color: var(--bg-color); /* mesmo fundo da página */
+    border-radius: 10px; /* bordas arredondadas */
+    padding: 1rem; /* espaço interno do card */
 }
 
 .profile:hover {
@@ -61,6 +77,30 @@ h1 {
     font-size: 1.2rem; /* tamanho do texto do nome */
     font-weight: 400; /* peso normal */
 }
+
+#theme-toggle {
+    position: fixed; /* posiciona em relação à tela */
+    top: 2rem; /* distância do topo */
+    right: 2rem; /* distância do lado direito */
+    width: 40px; /* tamanho */
+    height: 40px; /* tamanho */
+    font-size: 1.5rem; /* ícones maiores */
+    background: transparent; /* fundo transparente */
+    border: none; /* sem borda */
+    border-radius: 50%; /* botão circular */
+    cursor: pointer; /* cursor clicável */
+    transition: transform 0.3s ease; /* transição suave */
+    display: flex; /* flex para centralizar ícone */
+    align-items: center; /* centraliza verticalmente */
+    justify-content: center; /* centraliza horizontalmente */
+    color: var(--text-color); /* cor dinâmica */
+    padding: 0; /* sem padding */
+}
+
+#theme-toggle:hover {
+    transform: scale(1.15); /* aumenta um pouco no hover */
+}
+
 
 /* Responsividade */
 @media (max-width: 768px) {
