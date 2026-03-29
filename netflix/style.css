@@ -37,6 +37,10 @@ h1 {
     font-weight: 300; /* peso de fonte leve */
 }
 
+a {
+    text-decoration: none; /* remove sublinhado dos links */
+}
+
 .profiles {
     display: flex; /* layout flexível para perfis */
     justify-content: center; /* centraliza perfil horizontalmente */
@@ -44,25 +48,42 @@ h1 {
     flex-wrap: wrap; /* quebra linhas em telas menores */
 }
 
+#manage-profiles {
+    margin: 2rem auto 0; /* espaço acima e centralizado */
+    display: block;
+    background-color: #000; /* botão sempre preto */
+    color: #999; /* mesma cor dos nomes */
+    border: 1px solid #999;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+#manage-profiles:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
 .profile {
     display: flex; /* usa flexbox no perfil */
     flex-direction: column; /* conteúdo vertical */
     align-items: center; /* alinha itens ao centro */
     cursor: pointer; /* indica elemento clicável */
-    transition: transform 0.3s ease; /* animação suave no hover */
     background-color: var(--bg-color); /* mesmo fundo da página */
     border-radius: 10px; /* bordas arredondadas */
     padding: 1rem; /* espaço interno do card */
 }
 
 .profile:hover {
-    transform: scale(1.1); /* aumenta o perfil ao passar o mouse */
+    /* sem escala no hover */
 }
 
 .profile img {
     width: 150px; /* largura da imagem do perfil */
     height: 150px; /* altura da imagem do perfil */
-    border-radius: 50%; /* deixa a imagem circular */
+    border-radius: 8px; /* borda levemente arredondada */
     object-fit: cover; /* mantém proporção da imagem */
     border: 3px solid transparent; /* borda inicial transparente */
     transition: border-color 0.3s ease; /* animação da borda */
@@ -76,6 +97,12 @@ h1 {
     margin-top: 1rem; /* espaço acima do nome */
     font-size: 1.2rem; /* tamanho do texto do nome */
     font-weight: 400; /* peso normal */
+    color: #999; /* nome em cinza */
+    transition: color 0.3s ease;
+}
+
+.profile:hover p {
+    color: #fff; /* nome branco no hover */
 }
 
 #theme-toggle {
